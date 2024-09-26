@@ -4,7 +4,6 @@ import io.hhplus.tdd.database.PointHistoryTable
 import io.hhplus.tdd.database.UserPointTable
 import io.hhplus.tdd.point.PointRepositoryImpl
 import io.hhplus.tdd.point.PointService
-import io.hhplus.tdd.point.PointValidator
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertDoesNotThrow
@@ -30,7 +29,7 @@ class PointValidationTest {
         pointTable = UserPointTable()
         historyTable = PointHistoryTable()
         repository = PointRepositoryImpl(pointTable, historyTable)
-        service = PointService(PointValidator(), repository)
+        service = PointService(repository)
     }
 
     @Test

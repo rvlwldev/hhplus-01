@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service
 
 @Service
 class PointService(
-    private val validator: PointValidator,
     private val repo: PointRepositoryImpl
 ) {
+    private val validator = PointValidator()
 
     fun get(id: Long): UserPoint = repo.get(id)
 
