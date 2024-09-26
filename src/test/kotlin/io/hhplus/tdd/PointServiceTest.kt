@@ -4,6 +4,7 @@ import io.hhplus.tdd.database.PointHistoryTable
 import io.hhplus.tdd.database.UserPointTable
 import io.hhplus.tdd.point.PointRepositoryImpl
 import io.hhplus.tdd.point.PointService
+import io.hhplus.tdd.point.PointValidator
 import io.hhplus.tdd.point.TransactionType
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
@@ -32,7 +33,7 @@ class PointServiceTest {
         pointTable = UserPointTable()
         historyTable = PointHistoryTable()
         repository = PointRepositoryImpl(pointTable, historyTable)
-        service = PointService(repository)
+        service = PointService(PointValidator(), repository)
     }
 
     @Test
